@@ -227,7 +227,7 @@ pub fn render_inernal(src: *const c_char, result: *mut *const c_char) -> Result<
 
     let src = unsafe { CStr::from_ptr(src) };
 
-    let format = unsafe { CStr::from_bytes_with_nul_unchecked(&b"svg\0"[..]) };
+    let format = unsafe { CStr::from_bytes_with_nul_unchecked(&b"dot\0"[..]) };
     let engine = unsafe { CStr::from_bytes_with_nul_unchecked(&b"dot\0"[..]) };
 
     let graph = Graph::from_memory(src)?;
